@@ -1,5 +1,3 @@
-from collections import namedtuple
-
 def is_palindrome(str):
     half = len(str) // 2
     return str[:half] == str[-half:][::-1]
