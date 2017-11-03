@@ -1,14 +1,12 @@
 from collections import namedtuple
 
-Pivot = namedtuple('Pivot', 'start end')
-
 def is_palindrome(str):
     half = len(str) // 2
     return str[:half] == str[-half:][::-1]
 
 def get_pivot(str, start_idx):
-    single_pivot = Pivot(start=start_idx, end=start_idx)
-    double_pivot = Pivot(start=start_idx, end=(start_idx + 1))
+    single_pivot = (start_idx, start_idx)
+    double_pivot = (start_idx, (start_idx + 1))
 
     try:
         if(str[start_idx] == str[start_idx + 1]):
