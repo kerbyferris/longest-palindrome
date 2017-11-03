@@ -1,4 +1,7 @@
 (ns longest-palindrome.core)
 
-(defn main []
+(defn is-palindrome[str]
+  str)
+
+(defn -main []
   (println "Hello, World!"))
