@@ -1,4 +1,10 @@
 def is_palindrome(str):
+    if len(str) == 1:
+        return True
+
+    if len(str) == 0:
+        return False
+
     half = len(str) // 2
     return str[:half] == str[-half:][::-1]
 
@@ -35,7 +41,8 @@ def longest_palindrome(str, longest='', idx=0):
     if(idx == len(str) - 1):
         return longest
 
-    palindrome = get_palindrome(str, (get_pivot(str, idx)))
+    start, end = (get_pivot(str, idx))
+    palindrome = get_palindrome(str, start, end)
 
     if(len(palindrome) > len(longest)):
         return longest_palindrome(str, palindrome, idx + 1)

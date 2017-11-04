@@ -1,5 +1,5 @@
 import pytest
-from palindrome import get_pivot, is_palindrome, longest_palindrome 
+from longest_palindrome import get_pivot, is_palindrome, longest_palindrome 
 
 some_palindromes = ('a',
                     'ana',
@@ -20,8 +20,11 @@ def test_get_pivot():
     assert get_pivot('abba', 3) == (3, 3)
 
 def test_is_palindrome():
-    assert all([is_palindrome(p) for p in some_palindromes])
-    assert not any([is_palindrome(np) for np in some_not_palindromes])
+    for p in some_palindromes:
+        assert is_palindrome(p)
+
+    for not_palindrome in some_not_palindromes:
+        assert not is_palindrome(not_palindrome)
 
 def test_finds_palindrome():
     str = 'abba'
